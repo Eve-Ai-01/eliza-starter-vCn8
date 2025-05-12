@@ -1,13 +1,14 @@
 services:
     eliza:
         platform: linux/amd64
-        command: ["pnpm", "start", "--character=./characters/eliza.character.json"]
+        command: ["pnpm", "start", "--character=./characters/eve.character.json"]
         image: eliza-starter:v1
         stdin_open: true
         tty: true
         volumes:
             - ./data:/app/data
         environment:
+            - GROK_API_KEY=
             - DISCORD_APPLICATION_ID=
             - DISCORD_API_TOKEN=
             - REDPILL_API_KEY=
