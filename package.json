@@ -22,6 +22,7 @@
     "@elizaos/plugin-bootstrap": "0.1.9",
     "@elizaos/plugin-image-generation": "0.1.9",
     "@elizaos/plugin-node": "0.1.9",
+    "@elizaos/plugin-hedera" : "0.1.9",
     "@elizaos/plugin-solana": "0.1.9",
     "@elizaos/plugin-starknet": "0.1.9",
     "@tavily/core": "0.0.2",
