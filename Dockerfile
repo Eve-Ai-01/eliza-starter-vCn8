@@ -22,14 +22,9 @@ COPY tsconfig.json ./
 # Copy the rest of the application code
 COPY ./src ./src
 COPY ./characters ./characters
-COPY ./plugin-hedera ./plugin-hedera
 
 # Install dependencies and build the project
-RUN cd plugin-hedera && \
-    pnpm install && \
-    pnpm build && \
-    cd .. && \
-    pnpm install && \
+RUN pnpm install && \
     pnpm build
 
 # Create dist directory and set permissions
@@ -60,7 +55,7 @@ COPY --from=builder /app/package.json /app/
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/src /app/src
 COPY --from=builder /app/characters /app/characters
-COPY --from=builder /app/plugin-hedera /app/plugin-hedera
+
 COPY --from=builder /app/dist /app/dist
 COPY --from=builder /app/tsconfig.json /app/
 COPY --from=builder /app/pnpm-lock.yaml /app/
